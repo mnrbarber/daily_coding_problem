@@ -1,5 +1,6 @@
 
 """November 2020 Daily Coding Problems"""
+from functools import reduce
 
 
 def sum_values_to_k(lst, k):
@@ -16,3 +17,12 @@ def sum_values_to_k(lst, k):
             j += 1
     else:
         return False
+
+
+def product_array(lst):
+    """6th November: Given an array of integers, return  a new array such that each element ar index i of the new array
+    is the product of all the numbers in the original array except the one at i.
+    Bonus: What if you can't use divide?"""
+    product = reduce(lambda x, y: x*y, lst)
+    product_lst = list(product/i for i in lst)
+    return product_lst
